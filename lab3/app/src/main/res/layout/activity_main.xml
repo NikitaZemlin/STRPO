@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -22,19 +23,22 @@
             android:textSize="25sp"
             android:textColor="@color/black"/>
         <EditText
+            android:id="@+id/numberOfSides"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:hint="число"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"/>
 
         <Button
+            android:id="@+id/draw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:text="Рисовать"/>
+            android:text="Ok"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
