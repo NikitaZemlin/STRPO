@@ -15,3 +15,8 @@
 При старте приложения и по нажатию кнопки рисуется два статичных круга.
 
 
+![GhotJoELKwc](https://user-images.githubusercontent.com/75545890/142238629-045ad94d-d694-43d0-9f23-c9ae67c0e879.jpg)
+![T1lKk8EWET4](https://user-images.githubusercontent.com/75545890/142238641-6b86563f-b973-4582-96b5-c5b43d714c7e.jpg)
+![Tx5yvh6q5ww](https://user-images.githubusercontent.com/75545890/142238648-b289bb69-6377-478b-9020-63610112b775.jpg)
+![OZwFaYeH3-A](https://user-images.githubusercontent.com/75545890/142238655-c122e728-5b91-41c3-ad10-80d2572c1e46.jpg)
+![Eora0TS1JSQ](https://user-images.githubusercontent.com/75545890/142238662-253ca631-2945-408d-b779-d8ed8b592126.jpg)
