@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         x = event.getX();
-        y = event.getY();
+        y = event.getY()-230;
 
         label:
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
