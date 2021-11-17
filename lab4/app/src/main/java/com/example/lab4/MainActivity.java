@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.IpPrefix;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -18,21 +19,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.lab4.arrows.ArrowAssociation;
-import com.example.lab4.arrows.ArrowComposition;
-import com.example.lab4.arrows.ArrowInheritance;
+import com.example.lab4.Factory.Arrows.AddictionArrow;
+import com.example.lab4.Factory.Arrows.AssociationArrow;
+import com.example.lab4.Factory.Arrows.ImplementationArrow;
+import com.example.lab4.Factory.Arrows.InheritanceArrow;
 
 public class MainActivity extends AppCompatActivity {
     Button but;
     Paint paint;
     Canvas canvas;
     Bitmap bitmap;
-    int c=0;
     LinearLayout linearLayout;
-    float x, y, xS, yS, xE, yE, d;
-    float[] pos;
     DisplayMetrics displayMetrics;
     int height, width;
+    float x, y, xS, yS, xE, yE;
+    float[] pos;
     String arrow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,32 +50,28 @@ public class MainActivity extends AppCompatActivity {
         paint = new Paint();
         bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
-
-
+        paint.setColor(Color.BLUE);
+        drawCircle();
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (c==0){
-                    twoCircle one = new twoCircle();
-                    one.draw(paint, canvas);
-                    twoCircle two = new twoCircle();
-                    two.draw(paint, canvas);
-                    c+=1;
-                } else{
-                    bitmap.eraseColor(Color.TRANSPARENT);
-                    c=0;
-                }
+                linearLayout = findViewById(R.id.Liner);
+                paint = new Paint();
+                bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                canvas = new Canvas(bitmap);
+                paint.setColor(Color.BLUE);
+                bitmap.eraseColor(Color.TRANSPARENT);
+                drawCircle();
             }
         });
 
     }
 
-    @Override
+        @Override
     public boolean onTouchEvent(MotionEvent event) {
         x = event.getX();
         y = event.getY()-230;
 
-        label:
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN: // нажатие
                 xS = x;
@@ -90,25 +87,26 @@ public class MainActivity extends AppCompatActivity {
                 linearLayout.setBackground(new BitmapDrawable(bitmap));
                 switch (arrow) {
                     case "Association":
-                        ArrowAssociation arrowAssociation = new ArrowAssociation();
-                        arrowAssociation.draw(paint, canvas, pos);
+                        AssociationArrow associationArrow = new AssociationArrow();
+                        associationArrow.drawArrow(paint, canvas, pos);
                         break;
                     case "Inheritance":
-                        ArrowInheritance arrowInheritance = new ArrowInheritance();
-                        arrowInheritance.draw(paint, canvas, pos);
+                        InheritanceArrow inheritanceArrow = new InheritanceArrow();
+                        inheritanceArrow.drawArrow(paint, canvas, pos);
                         break;
                     case "Implementation":
-
+                        ImplementationArrow implementationArrow = new ImplementationArrow();
+                        implementationArrow.drawArrow(paint, canvas, pos);
                         break;
                     case "Addiction":
-
+                        AddictionArrow addictionArrow = new AddictionArrow();
+                        addictionArrow.drawArrow(paint, canvas, pos);
                         break;
                     case "Aggregation":
 
                         break;
                     case "Composition":
-                        ArrowComposition arrowComposition = new ArrowComposition();
-                        arrowComposition.draw(paint, canvas, pos);
+                        //CompositionArrow compositionArrow = new CompositionArrow().drawArrow(paint, canvas, pos);
                         break;
                 }
 
@@ -116,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -161,5 +160,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void drawCircle(){
+        linearLayout.setBackground(new BitmapDrawable(bitmap));
+        canvas.drawCircle(100,600, 80,  paint);
+        canvas.drawCircle(950,600, 80,  paint);
     }
 }
