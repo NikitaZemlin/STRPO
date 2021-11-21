@@ -1,6 +1,6 @@
 Главный класс находятся в lab5/app/src/main/java/com/example/lab5/
 
-Классы фигур + абстракция находятся в lab4/app/src/main/java/com/example/lab4/Shapes
+Классы фигур + абстракция находятся в lab5/app/src/main/java/com/example/lab5/Shapes
 
 Интерфейс Copyable по реализация объекта clone находится в 
 
