@@ -7,7 +7,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.widget.Toast;
 
-public class Triangle extends Shape{
+import com.example.lab5.Copyable;
+
+public class Triangle extends Shape implements Copyable {
     Context context;
     @Override
     public void draw(Paint paint, Canvas canvas, Context context, float[] pos) {
@@ -34,4 +36,8 @@ public class Triangle extends Shape{
         Toast.makeText(context, "Нарисован треугольник", Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public Object copy() {
+        return new Triangle();
+    }
 }

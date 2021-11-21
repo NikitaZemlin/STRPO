@@ -18,8 +18,12 @@ import android.widget.LinearLayout;
 
 import com.example.lab5.Shapes.Circle;
 import com.example.lab5.Shapes.Rectangle;
+import com.example.lab5.Shapes.Shape;
 import com.example.lab5.Shapes.Square;
 import com.example.lab5.Shapes.Triangle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Paint paint;
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     float x, y;
     float[] pos;
     String shape;
+
+    List<Shape> shapes = new ArrayList<>();
+    List<Shape> shapesCopy = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,22 +66,26 @@ public class MainActivity extends AppCompatActivity {
                     case "Круг":
                         bitmap.eraseColor(Color.TRANSPARENT);
                         Circle circle = new Circle();
-                        circle.draw(paint, canvas, this, pos);
+                        Circle copyCircle = (Circle)circle.copy();
+                        copyCircle.draw(paint, canvas, this, pos);
                         break;
                     case "Квадрат":
                         bitmap.eraseColor(Color.TRANSPARENT);
                         Square square = new Square();
-                        square.draw(paint, canvas, this, pos);
+                        Square copySquare = (Square)square.copy();
+                        copySquare.draw(paint, canvas, this, pos);
                         break;
                     case "Треугольник":
                         bitmap.eraseColor(Color.TRANSPARENT);
                         Triangle triangle = new Triangle();
-                        triangle.draw(paint, canvas, this, pos);
+                        Triangle copyTriangle = (Triangle)triangle.copy();
+                        copyTriangle.draw(paint, canvas, this, pos);
                         break;
                     case "Прямоугольник":
                         bitmap.eraseColor(Color.TRANSPARENT);
                         Rectangle rectangle = new Rectangle();
-                        rectangle.draw(paint, canvas, this, pos);
+                        Rectangle copyRectangle = (Rectangle)rectangle.copy();
+                        copyRectangle.draw(paint, canvas, this, pos);
                         break;
                 }
 
