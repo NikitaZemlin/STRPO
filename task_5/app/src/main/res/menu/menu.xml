@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/red"
+        android:title="Красный"
+        android:orderInCategory="200"
+        android:visible="true" />
+    <item
+        android:id="@+id/blue"
+        android:title="Сниний"
+        android:orderInCategory="200"
+        android:visible="true" />
+    <item
+        android:id="@+id/green"
+        android:title="Зелёный"
+        android:orderInCategory="200"
+        android:visible="true" />
+    <item
+        android:id="@+id/yellow"
+        android:title="Жёлтый"
+        android:orderInCategory="200"
+        android:visible="true" />
+
+</menu>
