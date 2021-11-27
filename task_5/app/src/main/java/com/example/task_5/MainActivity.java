@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.task_5.Smiley.Head;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     int param;
     Paint paint;
@@ -37,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         paint = new Paint();
         bitmap = Bitmap.createBitmap(1080, 2000, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
+
         //Default
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
@@ -76,16 +75,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN: // нажатие
-                bitmap.eraseColor(Color.TRANSPARENT);
+                //bitmap.eraseColor(Color.TRANSPARENT);
                 break;
             case MotionEvent.ACTION_MOVE: // движение
                 break;
             case MotionEvent.ACTION_UP: // отпускание
                 pos = new float[]{x, y};
                 linearLayout.setBackground(new BitmapDrawable(bitmap));
-                Head head = new Head();
-                head.draw(paint, canvas, pos, param);
-
 
         }
         return true;
