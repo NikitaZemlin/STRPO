@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Liner"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Исходный массив"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/firstArr"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:textColor="@color/black"
+            android:textSize="15sp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Остортированный массив"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/lastArr"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:textColor="@color/black"
+            android:textSize="15sp">
+        </TextView>
+        <Button
+            android:id="@+id/newArray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Новый массив"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/bubble"
+            android:text="Пузырьком"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/choice"
+            android:text="Выбором"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/insert"
+            android:text="Вставкой"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>
