@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 
-
 public class Head {
     public void draw(Paint paint, Canvas canvas, float[] pos, int param){
         if (param==1){

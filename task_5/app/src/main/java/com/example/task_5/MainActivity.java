@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.task_5.Smiley_parts.Brows;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     int param;
     Paint paint;
@@ -82,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case MotionEvent.ACTION_UP: // отпускание
                 pos = new float[]{x, y};
                 linearLayout.setBackground(new BitmapDrawable(bitmap));
-
         }
         return true;
     }

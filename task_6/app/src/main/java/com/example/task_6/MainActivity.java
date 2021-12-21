@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.choice:
                 Context contextChoice = new Context(new choiceSort());
-                contextChoice.sortArr(arr);
+                *contextChoice.sortArr(arr);
                 sortArr = contextChoice.getArr();
                 sortArr = Arrays.copyOf(arr, arr.length);
                 StringBuilder builderChoice = new StringBuilder();
